@@ -1,7 +1,7 @@
 import urllib3
 import simplejson as json
 
-
+api_key = '''put a reply.io api key in here'''
 base_url = 'https://api.reply.io/v1/'
 
 def get_campaigns():
