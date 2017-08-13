@@ -2,4 +2,30 @@
 
 {% block content %}
   <h1>Colin's Dashboard</h1>
+  <ul style='list-style-type:none'>
+  {% for campaign in campaigns %}
+    <li>
+      <h2>{{ campaign.name }}</h2>
+      <table>
+        <tr>
+          <td>People in</br>Campaign</td>
+          <td>People</br>Finished</td>
+          <td>People</br>Active</td>
+          <td>Delivered</td>
+          <td>Opens</td>
+          <td>Replies</td>
+          <td>Bounces</td>
+        </tr>
+        <tr>
+          <td>{{ campaign.peopleCount }}</td>
+          <td>{{ campaign.peopleFinished }}</td>
+          <td>{{ campaign.peopleActive }}</td>
+          <td>{{ campaign.deliveriesCount }}</td>
+          <td>{{ campaign.openCount }}</td>
+          <td>{{ campaign.repliesCount }}</td>
+          <td><td>{{ campaign.bouncesCount}}</td>
+      </table>
+    </li>
+  {% endfor %}
+  </ul>
 {% endblock content %}
