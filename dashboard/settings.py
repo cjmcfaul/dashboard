@@ -25,7 +25,7 @@ SECRET_KEY = '-*1((5*cved=3z@)2)sbre^l2d&hzmb#2#-r&awokf@0go=$59'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.0.1.19']
+ALLOWED_HOSTS = ['10.0.1.19','127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'landing',
 ]
 
 MIDDLEWARE = [
@@ -113,6 +114,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'landing.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
