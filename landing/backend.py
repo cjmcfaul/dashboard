@@ -2,11 +2,16 @@ import urllib3
 import simplejson as json
 import http.client, urllib.request, urllib.parse, urllib.error, base64
 
+<<<<<<< HEAD
 reply_api_key = 'UMBs_SY2DqqnILtSQJv60g2'
 reply_base_url = 'https://api.reply.io/v1/'
 
 transit_api_key = '3833947c624b4eef9eccf542b4740213'
 transit_base_url = 'api.wmata.com'
+=======
+api_key = '''put a reply.io api key in here'''
+base_url = 'https://api.reply.io/v1/'
+>>>>>>> 5b31e41378d818e11933b3ad8f5b3b2c6dcbc3b9
 
 def get_campaigns():
 
