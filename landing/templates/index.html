@@ -28,4 +28,22 @@
     </li>
   {% endfor %}
   </ul>
+  <h1>Buses</h1>
+  {% for stop in buses %}
+    <h2>{{ stop.StopName }}</h2>
+    {% for predic in stop.Predictions %}
+      <h2>{{ predic.DirectionText }}</h2>
+      <h2>{{ predic.Minutes }}</h2>
+      <h2>{{ predic.RouteID }}</h2>
+    {% endfor %}
+  {% endfor %}
+<h1>Trains</h1>
+  {% for station in trains %}
+    <h2>{{ station.Trains.0.LocationName }}</h2>
+    {% for guess in station.Trains %}
+      <h3>{{ guess.Destination }}</h3>
+      <h3>{{ guess.Line }}</h3>
+      <h3>{{ guess.Min }}</h3>
+    {% endfor %}
+  {% endfor %}
 {% endblock content %}
