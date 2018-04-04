@@ -1,5 +1,9 @@
 {% include 'base.html' %}
-
+<script>
+window.setTimeout(function () {
+    location.href = "{% url 'home' %}";
+}, 15000);
+</script>
 {% block content %}
 <!--  <ul style='list-style-type:none'>
   {% for campaign in campaigns %}
@@ -33,6 +37,9 @@
 </script>
 <div class="section group">
   <div class="col span_1_of_2">
+    <!-- clock widget start -->
+    <script type="text/javascript"> var css_file=document.createElement("link"); css_file.setAttribute("rel","stylesheet"); css_file.setAttribute("type","text/css"); css_file.setAttribute("href","//s.bookcdn.com//css/cl/bw-cl-120x45.css"); document.getElementsByTagName("head")[0].appendChild(css_file); </script> <div id="tw_6_217701358"><div style="width:520px; height:180px; margin: 0 auto;"><a href="http://booked.net/time/washington-18365">Washington</a><br/></div></div> <script type="text/javascript"> function setWidgetData_217701358(data){ if(typeof(data) != 'undefined' && data.results.length > 0) { for(var i = 0; i < data.results.length; ++i) { var objMainBlock = ''; var params = data.results[i]; objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id); if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code; } } } var clock_timer_217701358 = -1; </script> <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/time/info?ver=2&domid=209&type=6&id=217701358&scode=124&city_id=18365&wlangid=1&mode=1&details=0&background=ffffff&color=333333&add_background=a0a1a1&add_color=08488d&head_color=333333&border=0&transparent=0"></script>
+    <!-- clock widget end -->
     <h1>Buses</h1>
     {% for stop in buses %}
       <h2>{{ stop.1.StopName }} | {{ stop.2.rows.0.elements.0.duration.text }} walk</h3>
