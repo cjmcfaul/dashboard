@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from landing.backend import get_distance, find_train_stations, search_place, find_bus_stops, get_campaigns, get_train_predic, get_bus_predic
+from dashboard.secret_settings import *
 
 try:
     dash_place = search_place('1428+Montello+Ave+NE+Washington,DC')
