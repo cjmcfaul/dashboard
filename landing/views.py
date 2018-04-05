@@ -1,18 +1,24 @@
 from django.shortcuts import render
 from landing.backend import get_distance, find_train_stations, search_place, find_bus_stops, get_campaigns, get_train_predic, get_bus_predic
 
-def index(request):
-
+try:
     dash_place = search_place('1428+Montello+Ave+NE+Washington,DC')
 
     dash_place_lat = dash_place[0]
     dash_place_lng = dash_place[1]
     dash_place_lat_lng = str(dash_place_lat) + "+" + str(dash_place_lng)
     stops_near = find_bus_stops(dash_place_lat,dash_place_lng,2000)
-    stations_near = find_train_stations(dash_place_lat,dash_place_lng,2000)
+
+except:
+
+    stops_near = []
+
+def index(request):
+
+    #stations_near = find_train_stations(dash_place_lat,dash_place_lng,2000)
 
     bus_stops = []
-    train_stations = ['E02']
+    #train_stations = ['E02']
 
     b = 0
     for item in stops_near:
@@ -23,6 +29,7 @@ def index(request):
         b+=1
 
     t = 0
+    '''
     for item in stations_near:
         train_stations.append(stations_near['Entrances'][t]['StationCode1'])
         try:
@@ -30,9 +37,9 @@ def index(request):
         except:
             print('No 2nd station code')
         t+=1
-
+    '''
     buses = []
-    trains = []
+    #trains = []
 
     for stop in bus_stops:
         stop_lat = stop[0]
@@ -43,12 +50,12 @@ def index(request):
         print(distance)
         stop_info = [stop, stop_predic, distance]
         buses.append(stop_info)
-
+    '''
     for station in train_stations:
 
         station_info = get_train_predic(station)
         trains.append(station_info)
-
+    '''
     return render(request,'index.html', {
         'buses' : buses,
     })
