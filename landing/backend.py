@@ -112,9 +112,9 @@ def get_train_predic(station_code):
 
 def get_distance(start,dest):
 
-     maxtrix_url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&'
+     matrix_url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&'
 
-     url = '%s&mode=walking&origins=%s&destinations=%s&key=%s' % (maxtrix_url, start, dest, maxtrix_api_key)
+     url = '%s&mode=walking&origins=%s&destinations=%s&key=%s' % (matrix_url, start, dest, matrix_api_key)
 
      http = urllib3.PoolManager()
      response = http.request('GET', url)
