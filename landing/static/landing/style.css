@@ -1,3 +1,28 @@
+body, html {
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background: url("media/doodles.png");
+}
+
+.widget-bg {
+	padding: 10px;
+	background-color: #386FA4;
+	color: #E85F5C;
+}
+
+.widget-bg-red {
+	padding: 10px;
+	color: #386FA4;
+	background-color: #E85F5C;
+}
+
+.map-pad {
+	padding: 5px;
+}
+
 .section {
 	clear: both;
 	padding: 0px;
