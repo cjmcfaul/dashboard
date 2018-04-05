@@ -46,7 +46,7 @@ def index(request):
         stop_lat = stop[0]
         stop_lng = stop[1]
         stop_lat_lng = stop_lat + "+" + stop_lng
-        distance = get_distance(dash_place_lat_lng, stop_lat_lng)
+        distance = None #get_distance(dash_place_lat_lng, stop_lat_lng)
         stop_predic = get_bus_predic(stop[2])
         print(distance)
         stop_info = [stop, stop_predic, distance]
