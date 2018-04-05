@@ -1,2 +1,3 @@
+*.dashboard/secret_settings.py
 *.landing/backend.py
 *.sqlite

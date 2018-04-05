@@ -1,15 +1,11 @@
 import urllib3
 import simplejson as json
 import http.client, urllib.request, urllib.parse, urllib.error, base64
+from dashboard.secret_settings import *
 
-reply_api_key = 'UMBs_SY2DqqnILtSQJv60g2'
 reply_base_url = 'https://api.reply.io/v1/'
 
-transit_api_key = '3833947c624b4eef9eccf542b4740213'
 transit_base_url = 'api.wmata.com'
-
-maxtrix_api_key = 'AIzaSyDjDg_7TM-NelBZsoKCfKz2xNFO0D1hsHY'
-place_api_key = 'AIzaSyAKqU07QuZf1wezomzykkcSXiqeQNp-gyo'
 
 api_key = '''put a reply.io api key in here'''
 base_url = 'https://api.reply.io/v1/'
