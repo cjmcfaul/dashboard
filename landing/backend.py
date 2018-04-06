@@ -7,9 +7,29 @@ reply_base_url = 'https://api.reply.io/v1/'
 
 transit_base_url = 'api.wmata.com'
 
-api_key = '''put a reply.io api key in here'''
 base_url = 'https://api.reply.io/v1/'
 
+def get_lights():
+
+    url = 'http://10.0.0.15/api/%s/lights' % (hue_username)
+
+    http = urllib3.PoolManager()
+    response = http.request('GET', url)
+
+    json_items = json.loads(response.data)
+
+    light_list = []
+
+    for light in json_items:
+
+        name = json_items[light]['name']
+        on = json_items[light]['state']['on']
+        reachable = json_items[light]['state']['reachable']
+        light_info = {'name':name,'on':on,'reachable':reachable}
+
+        light_list.append(light_info)
+
+    return light_list
 
 def get_campaigns():
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from landing.backend import get_distance, find_train_stations, search_place, find_bus_stops, get_campaigns, get_train_predic, get_bus_predic
+from landing.backend import get_distance, find_train_stations, search_place, find_bus_stops, get_campaigns, get_train_predic, get_lights, get_bus_predic
 from dashboard.secret_settings import *
 
 try:
@@ -15,6 +15,8 @@ except:
     stops_near = []
 
 def index(request):
+
+    house_lights = get_lights()
 
     #stations_near = find_train_stations(dash_place_lat,dash_place_lng,2000)
 
@@ -59,4 +61,5 @@ def index(request):
     '''
     return render(request,'index.html', {
         'buses' : buses,
+        'house_lights' : house_lights,
     })

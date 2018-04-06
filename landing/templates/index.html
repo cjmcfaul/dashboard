@@ -68,6 +68,37 @@ window.setTimeout(function () {
         </table>
       {% endfor %}
     </div>
+    <div class="widget-bg">
+      <h1 class="text-center">Lights</h1>
+      <div class="light-list">
+        {% for light in house_lights %}
+          <div class="light-box">
+              <h4 class="text-center">{{ light.name }}</h4>
+              {% if light.reachable == False %}
+                <h1 class="text-center">
+                  <span class="glyphicon glyphicon-warning-sign light-red"></span>
+                </h1>
+                <p class="text-center">Offline</p>
+              {% elif light.on == True %}
+                <h1 class="text-center">
+                  <span class="glyphicon glyphicon-lamp light-on"></span>
+                </h1>
+                <p class="text-center">On</p>
+              {% elif light.on == False %}
+                <h1 class="text-center">
+                  <span class="glyphicon glyphicon-lamp light-off"></span>
+                </h1>
+                <p class="text-center">Off</p>
+              {% else %}
+                <h1 class="text-center">
+                  <span class="glyphicon glyphicon-asterisk light-error"></span>
+                </h1>
+                <p class="text-center">Error</p>
+              {% endif %}
+          </div>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
   <div class="col span_1_of_2">
     <div class="widget-bg">

@@ -7,16 +7,17 @@ body, html {
     background: url("media/doodles.png");
 }
 
-.widget-bg {
-	padding: 10px;
-	background-color: #386FA4;
-	color: #E85F5C;
-}
-
 .widget-bg-red {
 	padding: 10px;
-	color: #386FA4;
-	background-color: #E85F5C;
+	margin: 10px;
+	background-color: #F8333C;
+	color: #2B9EB3;
+}
+
+.widget-bg {
+	padding: 10px;
+	color: #F8333C;
+	background-color: #D6FFF6;
 }
 
 .map-pad {
@@ -24,9 +25,29 @@ body, html {
 }
 
 .clock-pad {
-	padding-top: 50px;
+	padding-top: 35px;
 	padding-left: 25px;
 	padding-right: 25px;
+}
+
+.light-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.light-red {
+	color: #F8333C;
+}
+.light-on {
+	color: #FFBA08;
+}
+.light-off {
+	color: #1A1423;
+}
+
+.light-box {
+	background-color: #DBD5B5;
 }
 
 .section {
