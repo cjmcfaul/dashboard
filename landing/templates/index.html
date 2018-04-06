@@ -31,15 +31,14 @@ window.setTimeout(function () {
     </li>
   {% endfor %}
 </ul>-->
-<div class="row map-pad">
+<div class="row widget-bg">
   <div class="col-sm-2 widget-clock">
     <div class="widget-time text-center">
       <h3>{{ now | date:"g:i A"}}</h3>
+      <h4 class="text-center">{{ now | date:"l, F jS, o"}}<h4>
     </div>
-    <!--<script type="text/javascript"> var css_file=document.createElement("link"); css_file.setAttribute("rel","stylesheet"); css_file.setAttribute("type","text/css"); css_file.setAttribute("href","//s.bookcdn.com//css/cl/bw-cl-120x45.css"); document.getElementsByTagName("head")[0].appendChild(css_file); </script> <div id="tw_6_217701358"><div style="width:260px; height:90px; margin: 0 auto;"><a href="http://booked.net/time/washington-18365">Washington</a><br/></div></div> <script type="text/javascript"> function setWidgetData_217701358(data){ if(typeof(data) != 'undefined' && data.results.length > 0) { for(var i = 0; i < data.results.length; ++i) { var objMainBlock = ''; var params = data.results[i]; objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id); if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code; } } } var clock_timer_217701358 = -1; </script> <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/time/info?ver=2&domid=209&type=6&id=217701358&scode=124&city_id=18365&wlangid=1&mode=1&details=0&background=ffffff&color=333333&add_background=a0a1a1&add_color=08488d&head_color=333333&border=0&transparent=0"></script> -->
-    <h4 class="text-center">{{ now | date:"l, F jS, o"}}<h4>
   </div>
-  <div class="col=sm-10">
+  <div class="col=sm-10 map-pad">
     <a class="weatherwidget-io" href="https://forecast7.com/en/38d91n77d03/district-of-columbia/?unit=us" data-theme="original" data-basecolor="#23C9FF" data-textcolor="#F8333C" data-highcolor="#F8333C" data-lowcolor="#D6FFF6" data-suncolor="#FFBA08" data-mooncolor="#dfdede" data-cloudcolor="#F7F0F0" data-raincolor="#1A1423" >Washington, D.C., USA</a>
     <script>
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
@@ -48,7 +47,7 @@ window.setTimeout(function () {
 </div>
 <div class="section group">
   <div class="col span_1_of_2">
-    <div class="widget-bg">
+    <div class="widget-bg map-pad">
       <h2 class="text-center">Buses</h2>
       {% for stop in buses %}
         <h4 class="text-center">{{ stop.1.StopName }}</h4> <!-- | {{ stop.2.rows.0.elements.0.duration.text }} walk -->
@@ -72,7 +71,7 @@ window.setTimeout(function () {
         </table>
       {% endfor %}
     </div>
-    <div class="widget-bg">
+    <div class="widget-bg map-pad">
       <h1 class="text-center">Lights</h1>
       <div class="light-list">
         {% for light in house_lights %}

@@ -8,8 +8,6 @@ body, html {
 }
 
 .widget-bg {
-	padding: 10px;
-	margin: 10px;
 	background-color: #F7F0F0;
 	color: #1A1423;
 	font: Tahoma;
@@ -28,7 +26,6 @@ body, html {
 }
 
 .widget-clock {
-	padding: 2px;
 	background-color: #F7F0F0;
 	color: #1A1423;
 	font: Tahoma;
