@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from landing.backend import get_distance, find_train_stations, search_place, find_bus_stops, get_campaigns, get_train_predic, get_lights, get_bus_predic
 from dashboard.secret_settings import *
+from django.utils import timezone
 
 try:
     dash_place = search_place('1428+Montello+Ave+NE+Washington,DC')
@@ -17,6 +18,8 @@ except:
 def index(request):
 
     house_lights = get_lights()
+
+    now = timezone.now()
 
     #stations_near = find_train_stations(dash_place_lat,dash_place_lng,2000)
 
@@ -62,4 +65,5 @@ def index(request):
     return render(request,'index.html', {
         'buses' : buses,
         'house_lights' : house_lights,
+        'now' : now,
     })

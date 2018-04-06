@@ -12,12 +12,14 @@ body, html {
 	margin: 10px;
 	background-color: #F7F0F0;
 	color: #1A1423;
+	font: Tahoma;
 }
 
 .widget-bg-red {
 	padding: 10px;
 	color: #F8333C;
 	background-color: #23C9FF;
+	font: Tahoma;
 }
 
 .map-pad {
@@ -25,16 +27,28 @@ body, html {
 	margin: 10px;
 }
 
-.clock-pad {
-	padding-top: 35px;
-	padding-left: 25px;
-	padding-right: 25px;
+.widget-clock {
+	padding: 2px;
+	background-color: #F7F0F0;
+	color: #1A1423;
+	font: Tahoma;
+}
+
+.widget-time {
+	border-style: solid;
+  border-width: 5px;
+	border-color: #F8333C;
+	border-radius: 25px;
+	margin: 5px;
+	color: #F8333C;
+	background-color: #23C9FF;
 }
 
 .light-list {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+	font: Tahoma;
 }
 
 .light-red {
