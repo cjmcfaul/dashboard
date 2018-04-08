@@ -31,10 +31,10 @@ window.setTimeout(function () {
     </li>
   {% endfor %}
 </ul>-->
-<div class="row widget-bg">
-  <div class="col-sm-2 widget-clock map-pad">
+<div class="row">
+  <div class="col-sm-2 map-pad">
     <div class="widget-time text-center">
-      <h3>{{ now | date:"g:i A"}}</h3>
+      <h1>{{ now | date:"g:i A"}}</h1>
       <h4 class="text-center">{{ now | date:"l, F jS, o"}}<h4>
     </div>
   </div>
@@ -47,32 +47,33 @@ window.setTimeout(function () {
 </div>
 <div class="section group">
   <div class="col span_1_of_2">
-    <div class="widget-bg map-pad">
-      <h2 class="text-center">Buses</h2>
+    <div class="map-pad">
+      <h2 class="widget-bg text-center">Buses</h2>
       {% for stop in buses %}
-        <h4 class="text-center">{{ stop.1.StopName }}</h4> <!-- | {{ stop.2.rows.0.elements.0.duration.text }} walk -->
-        <table class="table text-center widget-bg-red">
-          <thead>
+         <!-- | {{ stop.2.rows.0.elements.0.duration.text }} walk -->
+      <div class="widget-bg-red">
+        <table class="table">
             <tr>
-              <th scope="col">Route</th>
-              <th scope="col">Direction</th>
-              <th scope="col">Leaves In</th>
+              <h3 colspan="3" class="text-center">{{ stop.1.StopName }}</h3>
             </tr>
-          </thead>
-          <tbody>
+            <tr>
+              <th class="text-center">Route</th>
+              <th class="text-center">Direction</th>
+              <th class="text-center">Leaves In</th>
+            </tr>
             {% for predic in stop.1.Predictions %}
-              <tr>
+              <tr align="center">
                 <td>{{ predic.RouteID }}</td>
                 <td>{{ predic.DirectionText }}</td>
                 <td>{{ predic.Minutes }} mins</td>
               </tr>
             {% endfor %}
-          </tbody>
         </table>
+      </div>
       {% endfor %}
     </div>
-    <div class="widget-bg map-pad">
-      <h2 class="text-center">Lights</h2>
+    <div class="map-pad">
+      <h2 class="widget-bg text-center">Lights</h2>
       <div class="light-list">
         {% for light in house_lights %}
           <div class="light-box">
@@ -105,12 +106,12 @@ window.setTimeout(function () {
   </div>
 </div>
   <div class="col span_1_of_2">
-      <div class="widget-bg map-pad">
-        <h3 class="text-center"><span class="glyphicon glyphicon-road"></span>  Justin's Commute</h3>
+      <div class="map-pad">
+        <h3 class="widget-bg text-center"><span class="glyphicon glyphicon-road"></span>  Justin's Commute</h3>
         <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d49689.020705600415!2d-77.06660570754617!3d38.888220770252616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x89b7b813576eaf91%3A0xd96fdaff1c2212a7!2s1428+Montello+Ave+NE%2C+Washington%2C+DC+20002!3m2!1d38.9062853!2d-76.98794389999999!4m5!1s0x89b7b65e9c28d6f7%3A0xe9e4f79102c1b1a2!2s1525+Wilson+Blvd.%2C+Wilson+Boulevard%2C+Arlington%2C+VA!3m2!1d38.895238899999995!2d-77.075406!5e0!3m2!1sen!2sus!4v1522809659957" width="800" height="325" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
-      <div class="widget-bg map-pad">
-        <h3 class="text-center"><span class="glyphicon glyphicon-road"></span>  Patrick's Commute</span></h3>
+      <div class="map-pad">
+        <h3 class="widget-bg text-center"><span class="glyphicon glyphicon-road"></span>  Patrick's Commute</span></h3>
         <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d49693.85503566558!2d-77.04928927760103!3d38.881308910958495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x89b7b813576eaf91%3A0xd96fdaff1c2212a7!2s1428+Montello+Ave+NE%2C+Washington%2C+DC+20002!3m2!1d38.9062853!2d-76.98794389999999!4m5!1s0x89b7b72f1d8f3025%3A0xa1a8df3d604b5816!2s2231+Crystal+Dr%2C+Arlington%2C+VA+22202!3m2!1d38.853822199999996!2d-77.0486936!5e0!3m2!1sen!2sus!4v1522945748264"
         width="800" height="325" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
