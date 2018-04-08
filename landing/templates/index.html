@@ -104,6 +104,34 @@ window.setTimeout(function () {
       </ul>
     </div>
   </div>
+  <div class="map-pad">
+    <h2 class="widget-bg text-center">Crypto Value (${{ crypto_total|floatformat:"2"}})</h2>
+       <!-- | {{ stop.2.rows.0.elements.0.duration.text }} walk -->
+    <div class="widget-bg-red">
+      <table class="table">
+          <tr>
+            <th class="text-center">Coin</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Amount</th>
+            <th class="text-center">Value</th>
+            <th class="text-center">1H +/- (%)</th>
+            <th class="text-center">24H +/- (%)</th>
+            <th class="text-center">1W +/- (%)</th>
+          </tr>
+          {% for coin in crypto_list %}
+            <tr align="center">
+              <td>{{ coin.name }}</td>
+              <td>${{ coin.price|floatformat:"2" }}</td>
+              <td>{{ coin.amount }}</td>
+              <td>${{ coin.value|floatformat:"2" }}</td>
+              <td>{{ coin.hour }}</td>
+              <td>{{ coin.day }}</td>
+              <td>{{ coin.week }}</td>
+            </tr>
+          {% endfor %}
+      </table>
+    </div>
+  </div>
 </div>
   <div class="col span_1_of_2">
       <div class="map-pad">

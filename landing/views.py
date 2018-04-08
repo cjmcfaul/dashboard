@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from landing.backend import get_distance, find_train_stations, search_place, find_bus_stops, get_campaigns, get_train_predic, get_lights, get_bus_predic
+from landing.backend import get_distance, find_train_stations, search_place, find_bus_stops, get_campaigns, get_train_predic, get_lights, get_bus_predic, get_crypto
 from dashboard.secret_settings import *
 from django.utils import timezone
 
@@ -15,11 +15,29 @@ except:
 
     stops_near = []
 
+my_crypto_list = [
+    ['tron',3089.994],
+    ['bitcoin',.00516199],
+    ['ethereum',.09369720],
+    ['ripple',26.973],
+    ['nano',1.86813],
+    ]
+
 def index(request):
 
     house_lights = get_lights()
 
     now = timezone.now()
+
+    crypto_list = []
+    crypto_total = 0
+
+    for coin in my_crypto_list:
+
+        crypto_item = get_crypto(coin[0],coin[1])
+        crypto_total = crypto_total + crypto_item['value']
+
+        crypto_list.append(crypto_item)
 
     #stations_near = find_train_stations(dash_place_lat,dash_place_lng,2000)
 
@@ -66,4 +84,6 @@ def index(request):
         'buses' : buses,
         'house_lights' : house_lights,
         'now' : now,
+        'crypto_list': crypto_list,
+        'crypto_total': crypto_total,
     })

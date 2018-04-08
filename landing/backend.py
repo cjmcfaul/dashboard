@@ -31,6 +31,34 @@ def get_lights():
 
     return light_list
 
+def get_crypto(id,amount):
+
+    url = 'https://api.coinmarketcap.com/v1/ticker/%s/' % (id)
+
+    http = urllib3.PoolManager()
+    response = http.request('GET', url)
+
+    json_items = json.loads(response.data)
+
+    name = json_items[0]['name']
+    price = json_items[0]['price_usd']
+    value = float(price) * amount
+    hour = json_items[0]['percent_change_1h']
+    day = json_items[0]['percent_change_24h']
+    week = json_items[0]['percent_change_7d']
+
+    coin_info = {
+        'name': name,
+        'price': price,
+        'amount': amount,
+        'value': value,
+        'hour': hour,
+        'day': day,
+        'week': week,
+    }
+
+    return coin_info
+
 def get_campaigns():
 
     item = 'campaigns'
